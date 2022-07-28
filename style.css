@@ -1,0 +1,222 @@
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Manrope', sans-serif;
+    }
+    
+     :root {
+        --Very-DarkGrayish-Blue: hsl(217, 19%, 35%);
+        --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+        --Grayish-Blue: hsl(212, 23%, 69%);
+        --Light-Grayish-Blue: hsl(210, 46%, 95%);
+    }
+    
+    ul,
+    li {
+        list-style: none;
+    }
+    
+    h1 {
+        font-size: 20px;
+        font-weight: 700;
+        padding-bottom: 1rem;
+        color: var(--Very-DarkGrayish-Blue);
+    }
+    
+    h2 {
+        font-size: 14px;
+        padding-bottom: 4px;
+        color: var(--Very-DarkGrayish-Blue);
+    }
+    
+    p {
+        font-size: 13px;
+        line-height: 1.5;
+        padding-bottom: 1.5rem;
+        color: var(--Desaturated-Dark-Blue);
+    }
+    
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: var(--Light-Grayish-Blue);
+    }
+    
+    main {
+        display: flex;
+    }
+    
+    .drawer-image {
+        display: inline-block;
+        width: 23em;
+        height: 23em;
+        background-image: url(images/drawers.jpg);
+        background-size: cover;
+        background-position: left;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    
+    .drawer-text {
+        width: 35em;
+        height: 23em;
+        background-color: white;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding: 2em 3em;
+    }
+    
+    .testimonial {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .avatar {
+        border-radius: 50%;
+        width: 4em;
+    }
+    
+    .avatar-sec {
+        display: flex;
+        gap: 1.5em;
+    }
+    
+    .share-sec {
+        position: relative;
+    }
+    
+    .iconshare {
+        display: grid;
+        position: relative;
+        place-content: center;
+        border-radius: 50%;
+        background-color: var(--Light-Grayish-Blue);
+        width: 2.5em;
+        height: 2.5em;
+        cursor: pointer;
+    }
+    
+    .iconshare:active {
+        background-color: var(--Desaturated-Dark-Blue);
+    }
+    
+    .svg {
+        fill: var(--Very-DarkGrayish-Blue);
+    }
+    
+    .iconshare:active .svg {
+        fill: var(--Light-Grayish-Blue);
+    }
+    
+    .share {
+        position: absolute;
+        transform: translateX(-50%);
+        left: 50%;
+        top: -5em;
+        display: none;
+        align-items: center;
+        letter-spacing: 4px;
+        color: var(--Light-Grayish-Blue);
+        text-transform: uppercase;
+        gap: 1em;
+        border-radius: 10px;
+        padding: 1em 2em;
+        background-color: var(--Very-DarkGrayish-Blue);
+    }
+    
+    .active {
+        display: flex;
+    }
+    
+    .share::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        bottom: -9px;
+        left: 50%;
+        text-align: center;
+        background-color: var(--Very-DarkGrayish-Blue);
+        transform: rotate(180deg) translateX(50%);
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        height: 10px;
+        width: 20px;
+    }
+    
+    .share img {
+        width: 1.5em;
+    }
+    
+    @media (min-width: 600px) and (max-width: 850px) {
+        .drawer-image {
+            width: 30vw;
+            height: 40vw;
+        }
+        .drawer-text {
+            width: 60vw;
+            height: 40vw;
+            background-color: white;
+            padding: 1.5em 2em;
+        }
+        .testimonial {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 3em;
+        }
+    }
+    
+    @media (max-width: 599px) {
+        main {
+            flex-direction: column;
+            width: min(90vw, 400px);
+            position: relative;
+        }
+        h1 {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-top: 2em;
+        }
+        .drawer-image {
+            width: 100%;
+            height: 20em;
+            border-radius: 10px 10px 0 0;
+        }
+        .drawer-text {
+            display: grid;
+            border-radius: 0 0 10px 10px;
+            padding-block: 1em;
+            place-content: center;
+            width: 100%;
+            height: fit-content;
+        }
+        .testimonial {
+            margin-top: 2em;
+        }
+        .share-sec {
+            position: initial;
+        }
+        .iconshare {
+            background-color: var(--Light-Grayish-Blue);
+            position: relative;
+            z-index: 2;
+        }
+        .svg {
+            fill: var(--Very-DarkGrayish-Blue);
+        }
+        .share {
+            top: initial;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 7em;
+        }
+        .share::after {
+            content: none;
+        }
+    }
